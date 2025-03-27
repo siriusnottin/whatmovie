@@ -1,0 +1,33 @@
+services:
+  web:
+    container_name: web
+    build:
+      context: .
+    volumes:
+      - ./app:/var/www/app/
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    restart: on-failure
+    healthcheck: 
+      test: "curl -s -I http://localhost/ | head -n 1 | grep '200 OK'"
+      interval: 30s
+      timeout: 10s
+      retries: 5
+  db:
+    image: mariadb
+    container_name: db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: whatmovie
+      MYSQL_USER: whatmovie
+      MYSQL_PASSWORD: mypassword
+    volumes:
+      - ./db:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+volumes:
+  db: {}

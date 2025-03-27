@@ -1,0 +1,7 @@
+<? require_once 'includes/header.php'; ?>
+
+<h1>Create an account</h1>
+
+<p>Already have an account? <a href="/login">Log in</a></p>
+
+<?php require_once 'includes/footer.php'; ?>
