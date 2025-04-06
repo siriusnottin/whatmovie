@@ -1,0 +1,108 @@
+Project whatmovie {
+  database_type: 'MariaDB'
+  Note: 'Watchlist for your movies and TV Shows.'
+}
+
+TableGroup user_management {
+  user
+  role
+  watchlist
+}
+
+TableGroup media_content {
+  movie
+  tv_show
+  category
+  tag
+  poster
+}
+
+Enum movie_status {
+  released
+  upcoming
+  canceled
+}
+
+Enum tv_show_status {
+  airing
+  ended
+  canceled
+  on_break
+}
+
+Table movie {
+  id int [pk, increment]
+  title text
+  category_id int [ref: > category.id]
+  tag_id int [ref: > tag.id]
+  poster_id int [ref: > poster.id]
+  description text
+  release_date date
+  created_at timestamp
+  user_id int [ref: > user.id]
+  updated_at timestamp
+  status movie_status
+}
+
+Table tv_show {
+  id int [pk, increment]
+  title text
+  category_id int [ref: > category.id]
+  tag_id int [ref: > tag.id]
+  poster_id int [ref: > poster.id]
+  description text
+  release_date date
+  created_at timestamp
+  user_id int [ref: > user.id]
+  updated_at timestamp
+  status tv_show_status
+}
+
+Table poster {
+  id int [pk, increment]
+  filename varchar(255)
+  path varchar(255)
+  created_at timestamp
+}
+
+Table category {
+  id int [pk, increment]
+  title varchar(255)
+  description text
+  parent_id int [ref: > category.id]
+}
+
+Table tag {
+  id int [pk, increment]
+  title varchar(255)
+}
+
+Table user {
+  id int [pk, increment]
+  username varchar(255)
+  firstname varchar(255)
+  lastname varchar(255)
+  email varchar(255)
+  password varchar(255)
+  created_at timestamp
+  updated_at timestamp
+  bio text
+  role_id int [ref: > role.id]
+}
+
+Table role {
+  id int [pk, increment]
+  title varchar(255)
+  description text
+  access_level int [default: 1]
+  admin boolean [default: false]
+}
+
+Table watchlist {
+  id int [pk, increment]
+  user_id int [ref: > user.id]
+  movie_id int [ref: > movie.id]
+  tv_show_id int [ref: > tv_show.id]
+  created_at timestamp
+  updated_at timestamp
+}
