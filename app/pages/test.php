@@ -1,11 +1,10 @@
-<?php require_once dirname(__DIR__) . '/configs/env.php'; ?>
-<?php require_once  APP_DIR . '/partials/header.php'; ?>
+<?php require_once  dirname((__DIR__)) . '/partials/header.php'; ?>
 
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   try {
-    require_once CONFIG_DIR . '/database.php';
+    require_once dirname(__DIR__) . '/database.php';
     $test = $_POST['test'];
     $sql = "INSERT INTO movie (title) VALUES (:name)";
     $pdo->prepare($sql)->execute(['name' => $test]);
@@ -26,4 +25,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <button type="submit">Submit</button>
 </form>
 
-<?php require_once APP_DIR . '/partials/footer.php'; ?>
+<?php require_once dirname((__DIR__)) . '/partials/footer.php'; ?>

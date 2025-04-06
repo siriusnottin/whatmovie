@@ -1,5 +1,4 @@
-<?php require_once dirname(__DIR__) . '/configs/env.php'; ?>
-<?php require_once APP_DIR . '/partials/_header.php'; ?>
+<?php require_once dirname((__DIR__)) . '/partials/_header.php'; ?>
 
 <main>
   <img src="../public/logo.png" alt="Logo">
@@ -8,4 +7,4 @@
   <a href="/discover" class="btn btn-primary icon icon-arrow-right-sm">Find a movie <i class="ci-Arrow_Right_SM"></i> </a>
 </main>
 
-<?php require_once APP_DIR . '/partials/_footer.php'; ?>
+<?php require_once dirname((__DIR__)) . '/partials/_footer.php'; ?>

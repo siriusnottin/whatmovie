@@ -5,7 +5,6 @@ services:
       - db
     ports: 
       - '8080:80'
-      - '5173:${VITE_PORT:-5173}'
     volumes:
       - ./app:/var/www/html/
 
