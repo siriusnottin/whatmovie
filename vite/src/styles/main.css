@@ -1,0 +1,28 @@
+@import './tailwind.css';
+@import './coolicons.css';
+
+body {
+  @apply bg-grape-black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply text-grape;
+}
+
+p, span, a {
+  @apply text-grape-light;
+}
+
+input, textarea, select {
+  @apply text-grape-light;
+}
+
+label {
+  @apply text-grape;
+}
+
+
+header {
+  @apply bg-grape;
+  border-radius: ;
+}

@@ -3,31 +3,36 @@ services:
     container_name: web
     build:
       context: .
+      target: build
+    working_dir: /var/www/whatmovie
     volumes:
-      - ./app:/var/www/app/
+      - ./:/var/www/whatmovie
+    environment:
+      - WEB_DOCUMENT_ROOT=/var/www/whatmovie/public
     ports:
       - "8080:80"
+      - "5173:5173" # Vite
     depends_on:
       - db
-    restart: on-failure
+    restart: always
     healthcheck: 
-      test: "curl -s -I http://localhost/ | head -n 1 | grep '200 OK'"
-      interval: 30s
-      timeout: 10s
+      test: "curl -s -I http://web/ | head -n 1 | grep '200 OK'"
+      interval: 3s
       retries: 5
+      start_period: 10s
   db:
     image: mariadb
     container_name: db
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: whatmovie
       MYSQL_USER: whatmovie
-      MYSQL_PASSWORD: mypassword
+      MYSQL_PASSWORD: password
     volumes:
       - ./db:/var/lib/mysql
     ports:
       - "3306:3306"
 
 volumes:
-  db: {}
+  db-data:

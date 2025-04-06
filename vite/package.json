@@ -1,0 +1,36 @@
+{
+  "name": "php-vite-starter",
+  "description": "A modern vanilla PHP-Vite starter repo, utilizing vite-plugin-php",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "readme": "https://github.com/donnikitos/vite-plugin-php/#readme",
+  "license": "See MIT license in LICENSE",
+  "homepage": "https://github.com/nititech/php-vite-starter",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nititech/php-vite-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nititech/php-vite-starter/issues",
+    "email": "mail@nititech.de"
+  },
+  "author": {
+    "name": "nititech",
+    "email": "mail@nititech.de",
+    "url": "https://nititech.de"
+  },
+  "devDependencies": {
+    "@prettier/plugin-php": "^0.22.4",
+    "@tailwindcss/cli": "^4.1.1",
+    "@types/node": "^22.13.16",
+    "prettier": "^3.5.3",
+    "sass": "^1.86.1",
+    "tailwindcss": "^4.0.17",
+    "typescript": "^5.8.2",
+    "vite": "^4.0.0"
+  }
+}

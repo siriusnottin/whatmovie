@@ -1,0 +1,26 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Route for home page
+  RewriteRule ^$ pages/home.php [L]
+
+  # Route /{page} to /pages/{page}.php
+  RewriteRule ^([^/]+)$ pages/$1.php [L]
+
+  # Route /signin and /signup to their respective pages
+  RewriteRule ^(signin|signup)$ pages/account/$1.php [L]
+
+  # Route /forgot-password to /pages/account/forgot-password.php
+  RewriteRule ^forgot-password$ pages/account/forgot-password.php [L]
+
+  # Route /account and /account/{subpage} to their respective pages
+  RewriteRule ^account$ pages/account/index.php [L]
+  RewriteRule ^account/([^/]+)$ pages/account/$1.php [L]
+
+  # default route for 404
+  ErrorDocument 404 /pages/404.php
+
+  # Handle static files
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+</IfModule>
