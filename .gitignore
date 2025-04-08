@@ -1,7 +1,7 @@
 *.pdf
 db*
-raw/apache/*.conf
-uploads/
+app/raw/apache/*.conf
+app/uploads
 
 # generated files
 .php-tmp
