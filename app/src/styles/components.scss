@@ -1,0 +1,66 @@
+@layer components {
+
+.btn-primary {
+  @apply bg-grape text-celeste py-2 px-4 rounded-md shadow-[0px_4px_6px_0px_rgba(0,0,0,0.09)] flex items-center;
+
+  .btn-text {
+    @apply text-sm--line-height font-medium;
+  }
+  i {
+    @apply text-4xl font-black;
+  }
+  &:hover {
+    @apply bg-grape-light text-columbia-blue;
+
+    @apply transition-all duration-300 ease-in-out;
+
+    i {
+      @apply ml-2;
+
+      @apply transition-all duration-300 ease-in-out;
+    }
+  }
+  &.outline {
+    @apply bg-transparent text-columbia-blue border border-grape;
+  }
+  }
+  .btn-icon-circle {
+    @apply text-5xl text-celeste font-bold flex items-center gap-2;
+    @apply transition-all duration-300 ease-in-out;
+
+    i {
+      @apply text-3xl bg-grape text-amethyst-light rounded-full p-3 leading-none;
+      @apply transition-all duration-300 ease-in-out;
+      &::before {
+        @apply font-black;
+      }
+    }
+
+    &:hover {
+      @apply text-celeste text-4xl gap-4;
+      @apply transition-all duration-300 ease-in-out;
+
+      i {
+        transform: scale(1.2);
+        @apply transition-all duration-300 ease-in-out;
+      }
+    }
+  }
+  
+  .icon {
+    @apply text-3xl bg-grape text-amethyst-light rounded-full p-3;
+    @apply transition-all duration-300 ease-in-out;
+    &::before {
+      @apply font-black;
+    }
+    &:hover {
+      @apply text-celeste text-4xl gap-4;
+      @apply transition-all duration-300 ease-in-out;
+
+      i {
+        transform: scale(1.2);
+        @apply transition-all duration-300 ease-in-out;
+      }
+    }
+  }
+}

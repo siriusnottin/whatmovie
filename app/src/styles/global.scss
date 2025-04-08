@@ -1,1 +1,97 @@
-@import 'tailwindcss';
+@import './tailwind.css';
+
+body {
+  @apply bg-grape-black text-amethyst-light font-sans not-italic text-base flex flex-col items-center justify-between;
+  @apply min-h-screen w-full;
+}
+
+@import './components.scss';
+@import './header.scss';
+
+@keyframes logo-bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-2px);
+      }
+    }
+
+.hero {
+  @apply min-h-screen w-full;
+  @apply flex flex-col items-center justify-center;
+}
+
+main[data-page="home"] {
+  @apply w-220 flex flex-col items-end gap-6 relative;
+  .logo {
+    @apply size-48 h-auto -rotate-15 absolute left-0 bottom-0;
+    animation: logo-bounce 2s infinite;
+    @apply transition-all duration-300 ease-in-out;
+    img {
+      @apply w-full h-auto;
+    }
+  }
+  .content {
+    @apply flex flex-col justify-center items-end ;
+    .title {
+      @apply w-6/6 text-9xl text-grape font-extrabold tracking-tight;
+    }
+    .description {
+      @apply w-4/6 text-2xl text-amethyst-light font-light tracking-wide text-right;
+    }
+  }
+
+}
+
+section[data-page="discover"] {
+  .movie-card {
+    @apply flex gap-4;
+    .movie-poster {
+      @apply w-64;
+      img {
+        @apply w-full h-auto rounded;
+      }
+    }
+    .movie-poster ~ div {
+      @apply w-3xs;
+    }
+    .movie-title > .logo {
+      @apply size-auto;
+    }
+    .movie-info {
+      @apply flex  items-center gap-4;
+      .movie-details {
+        @apply flex gap-1 text-xl font-semibold text-columbia-blue;
+      }
+    }
+    .movie-actions {
+      .btn-icon-circle i {
+        @apply text-sm;
+      }
+    }
+  }
+
+  ~  main {
+    @apply w-full flex flex-col items-center gap-4;
+  }
+
+  ~  main section {
+    @apply w-5/6 flex flex-col gap-4;
+    h2 {
+      @apply text-3xl text-grape font-semibold tracking-tight;
+    }
+    .row {
+      @apply flex gap-4 overflow-x-auto;
+      .movie-card {
+        @apply max-w-64;
+        .movie-poster {
+          @apply w-64;
+          img {
+            @apply w-full h-auto rounded;
+          }
+        }
+      }
+    }
+  }
+}

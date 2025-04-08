@@ -1,2 +1,27 @@
 @import 'tailwindcss';
 
+@font-face {
+  font-family: 'Rubik';
+  src: url('../fonts/Rubik/Rubik-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-grape: #6F2DBD;
+  --color-grape-light: #7E439F;
+  --color-grape-black: #0F041D;
+  --color-amethyst: #A663CC;
+  --color-amethyst-light: #9E7DD5;
+  --color-celeste: #B9FAF8;
+  --color-columbia-blue: #B8D0EB;
+  --font-sans: 'Rubik', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}

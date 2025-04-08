@@ -4,7 +4,9 @@ Watchlist for your movies and TV Shows.
 
 ## Languages and Tools
 
-PHP-Apache, MariaDB, Docker, Vite, TailwindCSS, Sass.
+- PHP-Apache, MariaDB, Docker, Vite, TailwindCSS, Sass.
+
+- [coolicons PRO | 1,320+ Carefully Designed Icons | Duotone, Duocolor, Line Icons](https://coolicons.cool/)
 
 ## Development
 
