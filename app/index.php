@@ -1,3 +1,3 @@
 <?php
 
-// this is the entry point of the application
+// needed for Apache. All the routing is done there.
