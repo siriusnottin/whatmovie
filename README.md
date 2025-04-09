@@ -4,63 +4,115 @@ Watchlist for your movies and TV Shows.
 
 ## Languages and Tools
 
-- PHP-Apache (docker image), MariaDB, Docker
+- Docker
+- PHP
+- MariaDB,
+- Apache
 
 **Frontend Tools**
--  TailwindCSS, Sass.
+-  Tailwind
+-  Sass
 
 **Design**
 - Figma
 - [coolicons](https://coolicons.cool/)
 
+**Fonts**
+- [Rubik](https://hfs-studio.com/rubik/)
+- [Inter](https://rsms.me/inter/)
+
 ## Project Structure
 
 ```markdown
 /whatmovie
+│
 ├── /app
+│   │
 │   ├── /pages            # Main pages of the site
-│   │   ├── /account      # User account-related pages (signin, signup, etc.)
-│   │   ├── /movies       # Movie-related pages (discovery, details, etc.)
-│   │   ├── /tvshows      # TV show-related pages
+│   │   │
+│   │   ├── /account
+│   │   ├── /movies
+│   │   ├── /tvshows
 │   │   └── home.php      # Homepage
+│   │
 │   ├── /partials         # Reusable fragments (header, footer, etc.)
+│   │
 │   ├── /public           # Publicly accessible files (images, compiled JS, CSS)
+│   │   │
 │   │   ├── /uploads      # User-uploaded images (posters, logos, etc.)
 │   │   ├── /css
 │   │   ├── /js
 │   │   └── logo.svg
+│   │
 │   ├── /raw              # Raw files (Apache config, error files, etc.)
+│   │   │
 │   │   ├── /apache
 │   │   └── /php
+│   │
 │   ├── /src              # Uncompiled sources (CSS, JS, etc.)
+│   │   │
 │   │   ├── /styles
 │   │   ├── /scripts
 │   │   └── /fonts
-│   ├── /database         # Database-related scripts or files
-│   │   ├── database_schema.sql
-│   │   └── database_schema.dbml
+│   │
+│   ├── /database
+│   │   │
+│   │   ├── schema.sql    # SQL schema file (used in the build process)
+│   │   └── schema.dbml   # DBML file for visualizing the database schema
+│   │
 │   ├── Dockerfile
 │   ├── .env.example
 │   ├── .gitignore
-│   ├── index.php         # Main entry point
-│   └── compose.yaml      # Docker Compose file
-├── README.md             # Main documentation
+│   ├── index.php         # Main application entry point
+│   └── compose.yaml
+│
+└── README.md
 ```
 
 ## Development
 
-The docker is based on the [php Official Image](https://hub.docker.com/_/php), but with some modifications to make it work with Vite.
+The server that runs both PHP and Apache is based on the [PHP official image](https://hub.docker.com/_/php) on DockerHub, but with some modifications to fit this project's needs. You can explore the [`Dockerfile`](/app/Dockerfile) for more details.
+
+## Building the Project
 
 ```bash
-docker compose up -d
+# Copy the .env.example file to .env
+# Edit the .env file to your needs
+cp app/.env.example app/.env
 
-# Import database
-docker exec -i whatmovie_db_1 mysql -uroot -proot whatmovie < app/database/database_schema.sql
+# Build the Docker containers
+docker compose up --build -d
+
+# Install dependencies
+npm install
 ```
 
 ### Database
 
-The database schema is in the `app/database/database.dbml` file. You can use [dbdiagram.io](https://dbdiagram.io) to visualize it.
+The database is automatically created when the Docker containers are built. However, you can also manually import a database schema or a database dump if needed:
+
+```bash
+# Import the database schema
+docker exec -i whatmovie-db-1 mysql -uroot -proot whatmovie < app/database/schema.sql
+
+# Import a database dump
+docker exec -i whatmovie-db-1 mysql -uroot -proot whatmovie < app/database/dump.sql
+```
+
+The database schema is defined in the [`schema.dbml`](/app/database/schema.dbml) file. This DBML file provides a clear and simple way to describe the database structure. It can be used to generate SQL files or to visualize the relationships between tables.
+
+For the most up-to-date version of the schema, refer to the cloud-hosted version:
+
+[View the schema on dbdiagram.io](https://dbdiagram.io/d/WhatMovie-67e54abd4f7afba184712d2e)
+
+## Running the Project
+
+```bash
+# Start the Docker containers
+docker compose up -d
+
+# Start compiling styles
+npm run dev
 
 Open your browser and go to:
 
@@ -69,3 +121,4 @@ Open your browser and go to:
 ## Ressources
 
 - [Production Tuning Docker PHP Images](https://www.youtube.com/watch?v=OrYQO57ygqY)
+- [nititech/php-vite-starter: A modern vanilla PHP-Vite starter repo, utilizing vite-plugin-php](https://github.com/nititech/php-vite-starter/tree/master#) inspo for the project's structure.
