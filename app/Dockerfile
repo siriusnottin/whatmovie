@@ -4,10 +4,22 @@ FROM --platform=$BUILDPLATFORM php:8.4-apache as builder
 
 WORKDIR /var/www/html
 
-# Install PHP extensions
-RUN docker-php-ext-install -j$(nproc) opcache pdo_mysql
+# Install PHP extensions and dependencies
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        libzip-dev \
+        unzip \
+        git && \
+    rm -rf /var/lib/apt/lists/* && \
+    docker-php-ext-install -j$(nproc) opcache pdo_mysql zip
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 COPY raw/php/php-dev.ini $PHP_INI_DIR/conf.d/99-app.ini
+
+# Install composer
+COPY --from=composer:2.8 /usr/bin/composer /usr/bin/composer
+COPY composer.json composer.lock ./
+COPY vendor/ /var/www/html/vendor/
+RUN composer install --no-dev --no-scripts --no-progress --prefer-dist
 
 # Apache configuration
 COPY raw/apache/errors /errors

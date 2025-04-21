@@ -8,7 +8,7 @@
  */
 ?>
 
-<?php require dirname(__DIR__) . '/partials/_ascii-copyright.php'; ?>
+<?php if ($_ENV['APP_ENV'] !== 'dev') require dirname(__DIR__) . '/partials/_ascii-copyright.php'; ?>
 
 <!DOCTYPE html>
 <html lang="<?php echo $page->getLang(); ?>">

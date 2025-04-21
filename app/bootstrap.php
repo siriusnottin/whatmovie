@@ -1,18 +1,9 @@
 <?php
 
-spl_autoload_register(function ($class) {
-  $prefix = 'App\\';
-  $baseDir = __DIR__ . '/classes/';
+require_once __DIR__ . '/vendor/autoload.php';
 
-  $len = strlen($prefix);
-  if (strncmp($prefix, $class, $len) !== 0) {
-    return;
-  }
+use Dotenv\Dotenv;
 
-  $relativeClass = substr($class, $len);
-  $file = $baseDir . str_replace('\\', '/', $relativeClass) . '.php';
-
-  if (file_exists($file)) {
-    require $file;
-  }
-});
+// Load environment variables
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
