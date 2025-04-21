@@ -1,35 +1,46 @@
-<?php require_once dirname((__DIR__), 2) . '/partials/_header.php'; ?>
+<?php
 
-<main data-page="signin" class="hero">
-  <div class="content">
-    <h1 class="title">Login</h1>
-    <p class="description">
-      Welcome back! Please enter your credentials to access your account.
-    </p>
-  </div>
-  <form action="/signin" method="POST" class="form">
-    <div class="form-group">
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" required>
-    </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" required>
-    </div>
-    <div class="form-group">
-      <label for="remember-me">
-        <input type="checkbox" id="remember-me" name="remember-me">
-        Remember me
-      </label>
-    </div>
-    <div class="form-group">
-      <button type="submit" class="btn btn-primary">Login</button>
-      <p class="create-account">
-        <span>Not part of the family yet?</span>
-        <a href="/signup">Create an account</a>
-      </p>
-    </div>
-  </form>
-</main>
+require_once dirname(__DIR__, 2) . '/bootstrap.php';
 
-<?php require_once dirname((__DIR__), 2) . '/partials/_footer.php'; ?>
+use App\Core\Page;
+use App\Core\View;
+
+$page = new Page([
+    'slug' => 'signin',
+    'title' => 'Login - Whaat Movie?',
+    'lang' => 'en',
+    'description' => 'Welcome back! Please enter your credentials to access your account.',
+    'pageTemplate' => 'signin',
+]);
+
+$content = <<<HTML
+<div class="content">
+    <h1 class="title">{$page->getTitle()}</h1>
+    <p class="description">{$page->getDescription()}</p>
+</div>
+<form action="/signin" method="POST" class="form">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <div class="form-group">
+        <label for="remember-me">
+            <input type="checkbox" id="remember-me" name="remember-me">
+            Remember me
+        </label>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Login</button>
+        <p class="create-account">
+            <span>Not part of the family yet?</span>
+            <a href="/signup">Create an account</a>
+        </p>
+    </div>
+</form>
+HTML;
+
+echo View::render(dirname(__DIR__, 2) . '/templates/layout.php', compact('page', 'content'));
