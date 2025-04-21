@@ -10,11 +10,11 @@ $page = new Page([
     'title' => 'Login - Whaat Movie?',
     'lang' => 'en',
     'description' => 'Welcome back! Please enter your credentials to access your account.',
-    'pageTemplate' => 'signin',
+    'pageTemplate' => 'auth',
 ]);
 
 $content = <<<HTML
-<div class="content">
+<div class="auth-content">
     <h1 class="title">{$page->getTitle()}</h1>
     <p class="description">{$page->getDescription()}</p>
 </div>
@@ -43,4 +43,4 @@ $content = <<<HTML
 </form>
 HTML;
 
-echo View::render(dirname(__DIR__, 2) . '/templates/layout.php', compact('page', 'content'));
+echo View::render(dirname(__DIR__, 2) . "/templates/{$page->getPageTemplate()}-layout.php", compact('page', 'content'));

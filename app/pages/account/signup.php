@@ -10,12 +10,12 @@ $page = new Page([
     'title' => 'Sign Up - Whaat Movie?',
     'lang' => 'en',
     'description' => 'Create an account to start discovering and saving your favorite movies.',
-    'pageTemplate' => 'signup',
+    'pageTemplate' => 'auth',
 ]);
 
 $content = <<<HTML
-<div class="title">
-    <h1>{$page->getTitle()}</h1>
+<div class="auth-content">
+    <h1 class="title">{$page->getTitle()}</h1>
     <p class="description">{$page->getDescription()}</p>
 </div>
 <form action="/signup" method="POST" class="form">
@@ -33,4 +33,4 @@ $content = <<<HTML
 </form>
 HTML;
 
-echo View::render(dirname(__DIR__, 2) . '/templates/layout.php', compact('page', 'content'));
+echo View::render(dirname(__DIR__, 2) . '/templates/auth-layout.php', compact('page', 'content'));

@@ -22,7 +22,7 @@ class Page
   private $PAGE_TEMPLATES = [
     'home',
     'hero',
-    'signin', # also vaid for signup and forgot-password
+    'auth',
     'account'
   ];
   public function __construct(array $config = [])
@@ -81,6 +81,6 @@ class Page
 
   public function renderBodyAttributes()
   {
-    return "data-page='{$this->pageTemplate}'";
+    return "data-page='{$this->slug}'";
   }
 }

@@ -10,12 +10,12 @@ $page = new Page([
     'title' => 'Reset Password - Whaat Movie?',
     'lang' => 'en',
     'description' => 'Enter your email address and we will send you a link to reset your password.',
-    'pageTemplate' => 'forgot-password',
+    'pageTemplate' => 'auth',
 ]);
 
 $content = <<<HTML
-<div class="title">
-    <h1>{$page->getTitle()}</h1>
+<div class="auth-content">
+    <h1 class="title">{$page->getTitle()}</h1>
     <p class="description">{$page->getDescription()}</p>
 </div>
 <form action="/forgot-password" method="POST" class="form">
@@ -29,4 +29,4 @@ $content = <<<HTML
 </form>
 HTML;
 
-echo View::render(dirname(__DIR__, 2) . '/templates/layout.php', compact('page', 'content'));
+echo View::render(dirname(__DIR__, 2) . '/templates/auth-layout.php', compact('page', 'content'));
