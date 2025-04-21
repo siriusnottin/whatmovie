@@ -1,14 +1,14 @@
 <?php require_once dirname((__DIR__)) . '/partials/_header.php'; ?>
 
-<section data-page="discover" class="hero" style="background: linear-gradient(to top, rgba(15, 4, 29, 1), rgba(12, 3, 23, 0.08), rgba(12, 3, 23, 0)), url('/uploads/movie-poster-full.webp') no-repeat center center / cover;">
+<section data-page="discover" class="hero" style="background: linear-gradient(to top, rgba(15, 4, 29, 1), rgba(12, 3, 23, 0.08), rgba(12, 3, 23, 0)), url('/public/uploads/movie-poster-full.webp') no-repeat center center / cover;">
   <article class="movie-card">
     <div class="movie-poster">
-      <img src="/uploads/movie-poster.webp" alt="Movie Poster" class="poster">
+      <img src="/public/uploads/movie-poster.webp" alt="Movie Poster" class="poster">
     </div>
     <div>
       <div class="movie-title">
         <h2 class="hidden">Movie Title</h2>
-        <img src="/uploads/movie-logo.webp" alt="Movie Logo" class="logo">
+        <img src="/public/uploads/movie-logo.webp" alt="Movie Logo" class="logo">
       </div>
       <div class="movie-info">
         <div class="movie-details">
@@ -27,56 +27,12 @@
   
 </section>
 <main>
-  <section class="test">
-    <h2>Test</h2>
-    <div class="row movies">
-      <?php
-
-      require_once dirname((__DIR__)) . '/configs/database.php';
-
-      $sql = "SELECT * FROM movie";
-      $stmt = $pdo->prepare($sql);
-      $stmt->execute();
-      $movies = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      foreach ($movies as $movie) {
-        echo $movie['title'];
-      }
-      $sql = "SELECT * FROM media WHERE id = :id";
-      $stmt = $pdo->prepare($sql);
-      $stmt->bindParam(':id', $movie['id']);
-      $stmt->execute();
-      $media = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      foreach ($media as $mediaItem) {
-        echo '<img src="' . $mediaItem['path'] . '" alt="Movie Poster" class="poster w-100">';
-      }
-      ?>
-<?php
-      if (isset($_POST['movie-name'])) {
-        $movieName = $_POST['movie-name'];
-        $sql = "UPDATE movie SET title = :title, updated_at = NOW() WHERE id = :id";
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(':title', $movieName);
-        $stmt->bindParam(':id', $movie['id']);
-        $stmt->execute();
-        echo "Movie name updated to: " . htmlspecialchars($movieName);
-        header("Location: " . $_SERVER['PHP_SELF']);
-        exit();
-      }
-      ?>
-      <form action="" method="POST">
-        <input type="text" name="movie-name" id="movie-name" placeholder="Movie Name">
-        <input type="submit" value="Update">
-      </form>
-
-      
-    </div>
-  </section>
   <section class="last-seen">
     <h2>Last Seen</h2>
     <div class="row movies">
       <article class="movie-card">
         <div class="movie-poster">
-          <img src="/uploads/flow_affiche_web_fc.jpg" alt="Last Seen Movie Poster" class="poster">
+          <img src="/public/uploads/flow_affiche_web_fc.jpg" alt="Last Seen Movie Poster" class="poster">
         </div>
         <div class="movie-info">
             <div>
@@ -96,7 +52,7 @@
       </article>
       <article class="movie-card">
         <div class="movie-poster">
-          <img src="/uploads/flow_affiche_web_fc.jpg" alt="Last Seen Movie Poster" class="poster">
+          <img src="/public/uploads/flow_affiche_web_fc.jpg" alt="Last Seen Movie Poster" class="poster">
         </div>
         <div class="movie-info">
             <div>
@@ -116,7 +72,7 @@
       </article>
       <article class="movie-card">
         <div class="movie-poster">
-          <img src="/uploads/flow_affiche_web_fc.jpg" alt="Last Seen Movie Poster" class="poster">
+          <img src="/public/uploads/flow_affiche_web_fc.jpg" alt="Last Seen Movie Poster" class="poster">
         </div>
         <div class="movie-info">
             <div>
@@ -136,7 +92,7 @@
       </article>
       <article class="movie-card">
         <div class="movie-poster">
-          <img src="/uploads/flow_affiche_web_fc.jpg" alt="Last Seen Movie Poster" class="poster">
+          <img src="/public/uploads/flow_affiche_web_fc.jpg" alt="Last Seen Movie Poster" class="poster">
         </div>
         <div class="movie-info">
             <div>
@@ -156,7 +112,7 @@
       </article>
       <article class="movie-card">
         <div class="movie-poster">
-          <img src="/uploads/flow_affiche_web_fc.jpg" alt="Last Seen Movie Poster" class="poster">
+          <img src="/public/uploads/flow_affiche_web_fc.jpg" alt="Last Seen Movie Poster" class="poster">
         </div>
         <div class="movie-info">
             <div>
@@ -176,7 +132,7 @@
       </article>
       <article class="movie-card">
         <div class="movie-poster">
-          <img src="/uploads/flow_affiche_web_fc.jpg" alt="Last Seen Movie Poster" class="poster">
+          <img src="/public/uploads/flow_affiche_web_fc.jpg" alt="Last Seen Movie Poster" class="poster">
         </div>
         <div class="movie-info">
             <div>
@@ -196,7 +152,7 @@
       </article>
       <article class="movie-card">
         <div class="movie-poster">
-          <img src="/uploads/flow_affiche_web_fc.jpg" alt="Last Seen Movie Poster" class="poster">
+          <img src="/public/uploads/flow_affiche_web_fc.jpg" alt="Last Seen Movie Poster" class="poster">
         </div>
         <div class="movie-info">
             <div>
@@ -216,7 +172,7 @@
       </article>
       <article class="movie-card">
         <div class="movie-poster">
-          <img src="/uploads/flow_affiche_web_fc.jpg" alt="Last Seen Movie Poster" class="poster">
+          <img src="/public/uploads/flow_affiche_web_fc.jpg" alt="Last Seen Movie Poster" class="poster">
         </div>
         <div class="movie-info">
             <div>
@@ -236,7 +192,7 @@
       </article>
       <article class="movie-card">
         <div class="movie-poster">
-          <img src="/uploads/flow_affiche_web_fc.jpg" alt="Last Seen Movie Poster" class="poster">
+          <img src="/public/uploads/flow_affiche_web_fc.jpg" alt="Last Seen Movie Poster" class="poster">
         </div>
         <div class="movie-info">
             <div>
@@ -256,7 +212,7 @@
       </article>
       <article class="movie-card">
         <div class="movie-poster">
-          <img src="/uploads/flow_affiche_web_fc.jpg" alt="Last Seen Movie Poster" class="poster">
+          <img src="/public/uploads/flow_affiche_web_fc.jpg" alt="Last Seen Movie Poster" class="poster">
         </div>
         <div class="movie-info">
             <div>
