@@ -34,6 +34,8 @@ Watchlist for your movies and TV Shows.
 │   ├── /Controllers
 │   └── /Utils
 │   │
+│   ├── /templates        # Base templates for the site
+│   │
 │   ├── /partials         # Reusable fragments (header, footer, etc.)
 │   │
 │   ├── /pages            # Main pages of the site
