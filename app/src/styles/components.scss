@@ -1,5 +1,31 @@
 @layer components {
 
+main form {
+  @apply flex flex-col space-y-4;
+  .form-group {
+    @apply flex flex-col gap-2;
+  }
+  label {
+    @apply text-lg font-semibold;
+  }
+  input {
+    @apply self-stretch pl-3 pr-14 py-2 bg-[#301954] rounded-md outline-1 outline-[#6536B0] inline-flex justify-start items-center text-columbia-blue ;
+
+    &:focus-within {
+      @apply outline-3 outline-offset-1 outline-[#6536B0] ring-2 ring-[#9E7DD5];
+    }
+  }
+}
+
+input[type="checkbox"] {
+  @apply appearance-none border-[#6536B0] checked:bg-[#6536B0] checked:border-[#6536B0] rounded-xs p-2 accent-[#6536B0] cursor-pointer;
+
+  &:checked:before {
+    @apply bg-[#6536B0] border-[#6536B0] text-white text-center absolute w-4 h-4;
+    content: "✓";
+  }
+}
+
 .btn-primary {
   @apply bg-grape text-celeste py-2 px-4 rounded-md shadow-[0px_4px_6px_0px_rgba(0,0,0,0.09)] flex items-center;
 

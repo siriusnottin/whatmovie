@@ -1,7 +1,7 @@
 @import './tailwind.css';
 
 body {
-  @apply bg-grape-black text-amethyst-light font-sans not-italic text-base flex flex-col items-center justify-between;
+  @apply bg-grape-black text-amethyst-light font-sans text-base flex flex-col items-center justify-between;
   @apply min-h-screen w-full;
 }
 
@@ -22,6 +22,18 @@ body {
   @apply flex flex-col items-center justify-center;
 }
 
+body .hero {
+  .content {
+    @apply flex flex-col justify-center items-end ;
+    .title {
+      @apply w-6/6 text-9xl text-grape font-extrabold tracking-tight;
+    }
+    .description {
+      @apply w-4/6 text-2xl text-amethyst-light font-light tracking-wide text-right;
+    }
+  }
+}
+
 main[data-page="home"] {
   @apply w-220 flex flex-col items-end gap-6 relative;
   .logo {
@@ -32,19 +44,10 @@ main[data-page="home"] {
       @apply w-full h-auto;
     }
   }
-  .content {
-    @apply flex flex-col justify-center items-end ;
-    .title {
-      @apply w-6/6 text-9xl text-grape font-extrabold tracking-tight;
-    }
-    .description {
-      @apply w-4/6 text-2xl text-amethyst-light font-light tracking-wide text-right;
-    }
-  }
-
 }
 
 section[data-page="discover"] {
+  @apply flex flex-row p-4 gap-4;
   .movie-card {
     @apply flex gap-4;
     .movie-poster {

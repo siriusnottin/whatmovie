@@ -23,7 +23,7 @@ header .breandcrumbs {
 }
 
 header .search-form {
-  @apply flex items-center gap-2 text-slate-100 opacity-80;
+  @apply flex flex-row items-center gap-2 text-slate-100 opacity-80;
 
   .shortcut-txt {
     @apply opacity-60 font-normal;
