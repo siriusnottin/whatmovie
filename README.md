@@ -27,6 +27,12 @@ Watchlist for your movies and TV Shows.
 /whatmovie
 │
 ├── /app
+│
+├── /classes              # Contains all the PHP classes used for core functionality, business logic, entity representation, and utility tasks.
+│   ├── /Core
+│   ├── /Models
+│   ├── /Controllers
+│   └── /Utils
 │   │
 │   ├── /pages            # Main pages of the site
 │   │   │
@@ -113,10 +119,17 @@ docker compose up -d
 
 # Start compiling styles
 npm run dev
+```
 
 Open your browser and go to:
 
 - [http://localhost:8080](http://localhost:8080)
+
+## See the server logs
+
+```bash
+docker logs -f whatmovie-web-1 | bat --paging=never -l log
+```
 
 ## Ressources
 
