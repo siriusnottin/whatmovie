@@ -28,6 +28,6 @@ RUN a2enmod rewrite && \
     a2enconf app
 
 # Copy database schema for initialization
-COPY app/database/schema.sql /docker-entrypoint-initdb.d/
+COPY database/schema.sql /docker-entrypoint-initdb.d/
 
 CMD ["apache2-foreground"]
