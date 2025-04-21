@@ -34,14 +34,14 @@ Watchlist for your movies and TV Shows.
 │   ├── /Controllers
 │   └── /Utils
 │   │
+│   ├── /partials         # Reusable fragments (header, footer, etc.)
+│   │
 │   ├── /pages            # Main pages of the site
 │   │   │
 │   │   ├── /account
 │   │   ├── /movies
 │   │   ├── /tvshows
 │   │   └── home.php      # Homepage
-│   │
-│   ├── /partials         # Reusable fragments (header, footer, etc.)
 │   │
 │   ├── /public           # Publicly accessible files (images, compiled JS, CSS)
 │   │   │
