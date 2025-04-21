@@ -4,6 +4,7 @@ app/raw/apache/*.conf
 uploads/
 
 # generated files
+output.css
 .php-tmp
 
 # environment variables
