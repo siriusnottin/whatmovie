@@ -28,8 +28,8 @@ Watchlist for your movies and TV Shows.
 │
 ├── /app
 │
-├── /classes              # Contains all the PHP classes used for core functionality, business logic, entity representation, and utility tasks.
-│   ├── /Core
+├── /classes              # Contains all the PHP classes used for core functionality,
+│   ├── /Core               business logic, entity representation, and utility tasks.
 │   ├── /Models
 │   ├── /Controllers
 │   └── /Utils
@@ -68,10 +68,10 @@ Watchlist for your movies and TV Shows.
 │   │
 │   ├── Dockerfile
 │   ├── .env.example
-│   ├── .gitignore
 │   ├── index.php         # Main application entry point
-│   └── compose.yaml
 │
+├── .gitignore
+├── compose.yaml
 └── README.md
 ```
 
