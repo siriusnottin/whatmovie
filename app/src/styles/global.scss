@@ -10,7 +10,9 @@ body {
 }
 
 @import './components.scss';
+
 @import './header.scss';
 
-@import './account/auth.scss'; // TODO: move to account folder
+@import './pages/home.scss';
+@import './pages/account/auth.scss'; // TODO: move to account folder
 
