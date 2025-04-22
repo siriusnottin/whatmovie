@@ -16,7 +16,7 @@ $page = new Page([
 // Start output buffering
 ob_start();
 ?>
-<main data-page="account">
+<main>
   <div class="title">
     <h1><?= $page->getTitle(); ?></h1>
     <p class="description"><?= $page->getDescription(); ?></p>
