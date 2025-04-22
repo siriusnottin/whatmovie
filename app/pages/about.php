@@ -38,7 +38,7 @@ ob_start();
 <?php
 $content = ob_get_clean();
 
-echo View::render(dirname(__DIR__, 2) . "/templates/{$page->getPageTemplate()}-layout.php", [
+echo View::render(dirname(__DIR__, 1) . "/templates/{$page->getPageTemplate()}-layout.php", [
     'page' => $page,
     'content' => $content,
 ]);
