@@ -5,6 +5,7 @@ uploads/
 
 # generated files
 output.css
+.phpunit.result.cache
 .php-tmp
 
 # environment variables
