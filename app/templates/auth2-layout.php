@@ -22,9 +22,17 @@
 </head>
 
 <body <?php echo $page->renderBodyAttributes(); ?>>
-  <?php require dirname(__DIR__) . '/partials/_header.php'; ?>
-  <?php echo $content; ?>
-  <?php require dirname(__DIR__) . '/partials/_footer.php'; ?>
+  <div class="auth-container">
+    <header class="auth-header">
+      <a href="/" class="logo">Whaat Movie?</a>
+    </header>
+    <main class="auth-main">
+      <?php echo $content; ?>
+    </main>
+    <footer class="auth-footer">
+      <p>&copy; 2025 Whaat Movie? All rights reserved.</p>
+    </footer>
+  </div>
 </body>
 
 </html>
