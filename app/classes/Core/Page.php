@@ -85,6 +85,14 @@ class Page
 
   public function renderBodyAttributes()
   {
-    return "data-page='{$this->slug}'";
+    return "data-layout='{$this->layoutTemplate}' data-page='{$this->slug}'";
+  }
+
+  public function renderPageTemplate()
+  {
+    if ($this->layoutTemplate) {
+      return "templates/{$this->layoutTemplate}-layout.php";
+    }
+    return 'templates/default-layout.php';
   }
 }
