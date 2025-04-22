@@ -65,6 +65,10 @@ input[type="checkbox"] {
   }
 }
 
+.btn {
+  cursor: pointer;
+}
+
 .btn-primary {
   background-color: var(--color-grape);
   color: var(--color-celeste);
