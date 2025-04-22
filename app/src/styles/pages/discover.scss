@@ -1,0 +1,71 @@
+.hero {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "movie-card play-btn";
+  justify-items: start;
+
+  .movie-card {
+    align-self: flex-end;
+    justify-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    @apply max-w-4/5;
+    @apply gap-4;
+
+    .movie-poster {
+      img {
+        @apply w-64 h-96 rounded;
+      }
+    }
+
+    &>div {
+      @apply mt-4;
+
+      .movie-title {
+        .logo {
+          @apply self-stretch h-40;
+        }
+      }
+
+      .movie-info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+
+        .movie-details {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          @apply gap-2;
+          color: var(--color-columbia-blue);
+          font-variant-numeric: slashed-zero;
+          @apply text-xl font-semibold leading-7;
+
+          .rating {
+            display: inline-flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5rem;
+
+            i {
+              color: var(--color-amber-300);
+            }
+          }
+        }
+
+        .movie-actions {
+          a {}
+        }
+      }
+    }
+  }
+
+  .btn {
+    align-self: flex-end;
+  }
+
+}
