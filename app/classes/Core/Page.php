@@ -21,6 +21,7 @@ class Page
   // List of valid page templates
   private $PAGE_TEMPLATES = [
     'home',
+    'about',
     'auth',
     'account'
   ];

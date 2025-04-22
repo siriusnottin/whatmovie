@@ -6,23 +6,25 @@ use App\Core\Page;
 use App\Core\View;
 
 $page = new Page([
-    'slug' => 'about',
-    'title' => 'About Us - Whaat Movie?',
+    'slug' => 'legal-mentions',
+    'title' => 'Legal Mentions - Whaat Movie?',
     'lang' => 'en',
-    'description' => 'Learn more about the story behind Whaat Movie?',
+    'description' => 'Legal Mentions for Whaat Movie?',
     'pageTemplate' => 'about',
 ]);
 
 // Start output buffering
 ob_start();
 ?>
-<h1 class="title">Story Time!</h1>
+<h1 class="title">Legal Mentions</h1>
 <div class="content">
     <p>Figma ipsum component variant main layer. Rectangle strikethrough community asset star blur share. Create
         duplicate link overflow bold blur opacity group flows. Arrange figma shadow figjam editor. Frame blur group
         effect share strikethrough team rectangle undo. Underline union list shadow opacity strikethrough link italic.
         Bold strikethrough prototype arrange vertical overflow group pen align. Pencil distribute link scrolling effect
         image figjam polygon polygon. Content frame font shadow vertical asset device line underline star.</p>
+    <p>Some images are provided by The Movie Database (TMDB), such as movies and TV Shows posters, logos, studios logos…
+        (non-exhaustive)</p>
     <p>Mask figma edit effect pencil arrange frame arrow scrolling. Image comment pen line undo export asset union
         underline frame. Ellipse connection subtract style plugin invite background stroke. Opacity vector selection
         flows ellipse editor device font pen list. Group edit library slice rectangle slice selection. Project fill
