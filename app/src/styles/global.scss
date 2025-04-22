@@ -7,13 +7,27 @@ body {
   font-size: var(--text-base);
   min-height: 100vh;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
 }
 
 @import './components.scss';
 
 @import './header.scss';
 
-@import './pages/home.scss';
-@import './pages/account/auth.scss'; // TODO: move to account folder
+body[data-page="home"] {
+  @import './pages/home.scss';
+}
+
+body[data-page="discover"] {
+  @import './pages/discover.scss';
+}
+
+body[data-page="auth"] {
+  @import './pages/account/auth.scss';
+}
 
 @import './footer.scss';
