@@ -10,6 +10,13 @@
       flex-direction: column;
       gap: 0.5rem;
     }
+
+    &.search-form {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: center;
+    }
   }
 
   label {
