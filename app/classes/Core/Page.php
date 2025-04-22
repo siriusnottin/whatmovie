@@ -22,6 +22,7 @@ class Page
   private $PAGE_TEMPLATES = [
     'home',
     'about',
+    'discover',
     'auth',
     'account'
   ];
@@ -31,7 +32,10 @@ class Page
     $this->title = $config['title'] ?? '';
     $this->lang = $config['lang'] ?? 'en';
     $this->description = $config['description'] ?? '';
-    $this->pageTemplate = isset($config['pageTemplate']) && in_array($config['pageTemplate'], $this->PAGE_TEMPLATES) ? $config['pageTemplate'] : null;
+    if (isset($config['pageTemplate']) && !in_array($config['pageTemplate'], $this->PAGE_TEMPLATES)) {
+      throw new \InvalidArgumentException("Page template '{$config['pageTemplate']}' does not exist.");
+    }
+    $this->pageTemplate = $config['pageTemplate'] ?? null;
     $this->styles = array_merge($this->BASE_STYLES, isset($config['styles']) && is_array($config['styles']) ? $config['styles'] : []);
     $this->scripts = isset($config['scripts']) && is_array($config['scripts']) ? $config['scripts'] : [];
   }
