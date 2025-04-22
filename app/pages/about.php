@@ -13,13 +13,20 @@ $page = new Page([
     'pageTemplate' => 'about',
 ]);
 
-$content = <<<HTML
+// Start output buffering
+ob_start();
+?>
 <h1 class="title">Story Time!</h1>
 <div class="content">
     <p>Figma ipsum component variant main layer. Rectangle strikethrough community asset star blur share...</p>
     <p>Mask figma edit effect pencil arrange frame arrow scrolling...</p>
     <p>Slice layer device inspect pixel. Component create arrange pixel bold group...</p>
 </div>
-HTML;
+<?php
+$content = ob_get_clean();
 
-echo View::render(dirname(__DIR__) . '/templates/layout.php', compact('page', 'content'));
+// Render the page using the View class
+echo View::render(dirname(__DIR__) . '/templates/layout.php', [
+    'page' => $page,
+    'content' => $content,
+]);

@@ -13,10 +13,12 @@ $page = new Page([
     'pageTemplate' => 'auth',
 ]);
 
-$content = <<<HTML
+// Start output buffering
+ob_start();
+?>
 <div class="auth-content">
-    <h1 class="title">{$page->getTitle()}</h1>
-    <p class="description">{$page->getDescription()}</p>
+    <h1 class="title"><?= $page->getTitle(); ?></h1>
+    <p class="description"><?= $page->getDescription(); ?></p>
 </div>
 <form action="/signin" method="POST" class="form">
     <div class="form-group">
@@ -41,6 +43,11 @@ $content = <<<HTML
         </p>
     </div>
 </form>
-HTML;
+<?php
+$content = ob_get_clean();
 
-echo View::render(dirname(__DIR__, 2) . "/templates/{$page->getPageTemplate()}-layout.php", compact('page', 'content'));
+// Render the page using the View class
+echo View::render(dirname(__DIR__, 2) . "/templates/{$page->getPageTemplate()}-layout.php", [
+    'page' => $page,
+    'content' => $content,
+]);

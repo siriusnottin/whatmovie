@@ -13,8 +13,11 @@ $page = new Page([
     'pageTemplate' => 'discover',
 ]);
 
-$content = <<<HTML
-<section class="hero" style="background: linear-gradient(to top, rgba(15, 4, 29, 1), rgba(12, 3, 23, 0.08), rgba(12, 3, 23, 0)), url('/public/uploads/movie-poster-full.webp') no-repeat center center / cover;">
+// Start output buffering
+ob_start();
+?>
+<section class="hero"
+    style="background: linear-gradient(to top, rgba(15, 4, 29, 1), rgba(12, 3, 23, 0.08), rgba(12, 3, 23, 0)), url('/public/uploads/movie-poster-full.webp') no-repeat center center / cover;">
     <article class="movie-card">
         <div class="movie-poster">
             <img src="/public/uploads/movie-poster.webp" alt="Movie Poster" class="poster">
@@ -31,7 +34,8 @@ $content = <<<HTML
                     <span class="duration">109 min</span>
                 </div>
                 <div class="movie-actions">
-                    <a href="/add-to-watchlist?movieId=1" class="btn btn-icon-circle btn-add"><i class="ci-Heart_01"></i><span class="btn-text hidden">Add to Watchlist</span></a>
+                    <a href="/add-to-watchlist?movieId=1" class="btn btn-icon-circle btn-add"><i
+                            class="ci-Heart_01"></i><span class="btn-text hidden">Add to Watchlist</span></a>
                 </div>
             </div>
         </div>
@@ -39,8 +43,13 @@ $content = <<<HTML
     <a href="#" class="btn btn-icon-circle btn-play"><i class="ci-Play"></i><span class="btn-text">Play Now!</span></a>
 </section>
 <main>
-    
-</main>
-HTML;
 
-echo View::render(dirname(__DIR__) . '/templates/layout.php', compact('page', 'content'));
+</main>
+<?php
+$content = ob_get_clean();
+
+// Render the page using the View class
+echo View::render(dirname(__DIR__) . '/templates/layout.php', [
+    'page' => $page,
+    'content' => $content,
+]);
