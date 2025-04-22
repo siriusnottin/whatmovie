@@ -8,7 +8,7 @@ class Page
   private $title;
   private $lang;
   private $description;
-  private $pageTemplate;
+  private $layoutTemplate;
   private $styles;
   private $scripts;
 
@@ -35,7 +35,7 @@ class Page
     if (isset($config['pageTemplate']) && !in_array($config['pageTemplate'], $this->PAGE_TEMPLATES)) {
       throw new \InvalidArgumentException("Page template '{$config['pageTemplate']}' does not exist.");
     }
-    $this->pageTemplate = $config['pageTemplate'] ?? null;
+    $this->layoutTemplate = $config['pageTemplate'] ?? null;
     $this->styles = array_merge($this->BASE_STYLES, isset($config['styles']) && is_array($config['styles']) ? $config['styles'] : []);
     $this->scripts = isset($config['scripts']) && is_array($config['scripts']) ? $config['scripts'] : [];
   }
@@ -62,7 +62,7 @@ class Page
 
   public function getPageTemplate()
   {
-    return $this->pageTemplate;
+    return $this->layoutTemplate;
   }
 
   public function renderStyles()
