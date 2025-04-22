@@ -14,7 +14,7 @@ $page = new Page([
 ]);
 
 $content = <<<HTML
-<section data-page="discover" class="hero" style="background: linear-gradient(to top, rgba(15, 4, 29, 1), rgba(12, 3, 23, 0.08), rgba(12, 3, 23, 0)), url('/public/uploads/movie-poster-full.webp') no-repeat center center / cover;">
+<section class="hero" style="background: linear-gradient(to top, rgba(15, 4, 29, 1), rgba(12, 3, 23, 0.08), rgba(12, 3, 23, 0)), url('/public/uploads/movie-poster-full.webp') no-repeat center center / cover;">
     <article class="movie-card">
         <div class="movie-poster">
             <img src="/public/uploads/movie-poster.webp" alt="Movie Poster" class="poster">
@@ -38,6 +38,9 @@ $content = <<<HTML
     </article>
     <a href="#" class="btn btn-icon-circle btn-play"><i class="ci-Play"></i><span class="btn-text">Play Now!</span></a>
 </section>
+<main>
+    
+</main>
 HTML;
 
 echo View::render(dirname(__DIR__) . '/templates/layout.php', compact('page', 'content'));
