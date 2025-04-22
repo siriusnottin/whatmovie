@@ -1,7 +1,7 @@
 <?php
 
 /**
- * About Layout Template
+ * Home Layout Template
  * 
  * @var App\Core\Page $page
  * @var string $content
