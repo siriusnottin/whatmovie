@@ -40,8 +40,7 @@ ob_start();
 <?php
 $content = ob_get_clean();
 
-// Render the page using the View class
-echo View::render(dirname(__DIR__) . '/templates/about-layout.php', [
+echo View::render(dirname(__DIR__, 2) . "/templates/{$page->getPageTemplate()}-layout.php", [
     'page' => $page,
     'content' => $content,
 ]);
