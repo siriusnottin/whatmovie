@@ -1,0 +1,45 @@
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 1.25rem;
+    @apply w-2/4;
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      h1 {
+        color: var(--color-grape);
+        font-size: var(--text-8xl);
+        font-weight: 900;
+      }
+
+      p {
+        font-size: var(--text-2xl);
+        font-weight: 400;
+        @apply max-w-4/5;
+      }
+    }
+
+    .logo {
+      position: absolute;
+      transform: rotate(-14deg);
+      @apply -bottom-2 -left-28;
+
+      img {
+        width: 18rem;
+        height: auto;
+      }
+    }
+  }
+}

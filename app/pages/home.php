@@ -18,7 +18,7 @@ ob_start();
 ?>
 <main>
   <div class="hero">
-    <div class="content">
+    <div class="hero-content">
       <h1 class="title"><?= $page->getTitle(); ?></h1>
       <p class="description"><?= $page->getDescription(); ?></p>
     </div>
