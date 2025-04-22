@@ -1,6 +1,13 @@
 {
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"[css, scss]": {
+	"[css]": {
 		"editor.defaultFormatter": "vscode.css-language-features"
-	}
+	},
+	"[scss]": {
+		"editor.defaultFormatter": "vscode.css-language-features"
+	},
+	"phpunit.command": "\"${phpunit}\" ${phpunitargs}",
+	"[php]": {
+		"editor.defaultFormatter": "DEVSENSE.phptools-vscode"
+	},
 }
