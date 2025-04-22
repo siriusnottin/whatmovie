@@ -29,7 +29,10 @@ ob_start();
             </div>
             <div class="movie-info">
                 <div class="movie-details">
-                    <span class="rating">6.2</span>
+                    <div class="rating">
+                        <i class="ci-Star"></i>
+                        <span>6.2</span>
+                    </div>
                     <span class="release-date-year">2025</span>
                     <span class="duration">109 min</span>
                 </div>
