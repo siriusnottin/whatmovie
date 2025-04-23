@@ -15,7 +15,6 @@ class User
   private $bio;
   private $role;
   private $db;
-  private $table = 'user';
 
   public function __construct($id, $username, $first_name, $last_name, $email, $password, $created_at, $updated_at, $bio, $role)
   {
