@@ -6,7 +6,7 @@ Watchlist for your movies and TV Shows.
 
 - Docker
 - PHP
-- MariaDB,
+- MariaDB
 - Apache
 
 **Frontend Tools**
