@@ -67,15 +67,6 @@ class Page
   {
     return $this->layoutTemplate;
   }
-  public function getUsername()
-  {
-    $userId = $_SESSION['user_id'] ?? null;
-    if ($userId) {
-      $user = \App\Models\User::find($userId, $this->db);
-      return $user ? $user->getUsername() : 'Guest';
-    }
-    return 'Guest';
-  }
   public function renderStyles()
   {
     $styles = '';
