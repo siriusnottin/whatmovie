@@ -26,7 +26,7 @@ Watchlist for your movies and TV Shows.
 
 ## Project Structure
 
-```markdown
+```
 /whatmovie
 │
 ├── /app
