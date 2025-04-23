@@ -133,6 +133,10 @@ Open your browser and go to:
 docker logs -f whatmovie-web-1 | bat --paging=never -l log
 ```
 
+## Screenshots
+
+You can find the screenshots of the project in the [`screenshots`](/screenshots) folder. These images showcase the design and functionality of the application.
+
 ## Ressources
 
 - [Production Tuning Docker PHP Images](https://www.youtube.com/watch?v=OrYQO57ygqY)
