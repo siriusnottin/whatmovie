@@ -57,5 +57,9 @@ class Database
   public function query($sql)
   {
     $this->stmt = $this->pdo->prepare($sql);
+    if (!$this->stmt) {
+      throw new \RuntimeException("Failed to prepare SQL statement: $sql");
+    }
+    return $this->stmt;
   }
 }
