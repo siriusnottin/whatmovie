@@ -4,10 +4,11 @@ require_once dirname(__DIR__, 2) . '/bootstrap.php';
 
 use App\Core\Page;
 use App\Core\View;
+use App\Models\User;
 
 $page = new Page([
-  'slug' => 'account',
-  'title' => 'Account Settings - Whaat Movie?',
+  'slug' => 'profile',
+  'title' => 'My Account - Whaat Movie?',
   'lang' => 'en',
   'description' => 'Manage your account settings and preferences.',
   'pageTemplate' => 'account',
@@ -26,11 +27,12 @@ ob_start();
     <div class="form-group">
       <label for="username">Username</label>
       <input type="text" id="username" name="username" disabled
-        value="<?= htmlspecialchars($page->getUsername(), ENT_QUOTES); ?>">
+        value="<?= htmlspecialchars($user ? $user->getUsername() : '', ENT_QUOTES); ?>">
     </div>
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" name="email" required
+        value="<?= htmlspecialchars($user->getEmail(), ENT_QUOTES); ?>">
     </div>
     <div class="form-group">
       <button type="submit" class="btn btn-primary">Update</button>
