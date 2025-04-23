@@ -2,9 +2,13 @@
 
 require_once dirname(__DIR__, 2) . '/bootstrap.php';
 
+use App\Controllers\AuthController;
 use App\Core\Page;
 use App\Core\View;
-use App\Models\User;
+
+// Require authentication
+$authController = new AuthController();
+$authController->requireAuth();
 
 $page = new Page([
   'slug' => 'profile',
@@ -19,20 +23,20 @@ ob_start();
 ?>
 <main>
   <h1 hidden>Account Settings</h1>
-  <select name="accountMenu" id="accountMenu">
-    <option value="account">Profile</option>
-    <option value="password">Password</option>
-  </select>
+  <nav>
+    <ul>
+      <li><a href="/account/profile">Profile</a></li>
+      <li><a href="/account/password">Password</a></li>
+    </ul>
+  </nav>
   <form action="/account/update" method="POST">
     <div class="form-group">
       <label for="username">Username</label>
-      <input type="text" id="username" name="username" disabled
-        value="<?= htmlspecialchars($user ? $user->getUsername() : '', ENT_QUOTES); ?>">
+      <input type="text" id="username" name="username" disabled value="">
     </div>
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" required
-        value="<?= htmlspecialchars($user->getEmail(), ENT_QUOTES); ?>">
+      <input type="email" id="email" name="email" required value="">
     </div>
     <div class="form-group">
       <button type="submit" class="btn btn-primary">Update</button>
