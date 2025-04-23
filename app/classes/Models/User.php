@@ -45,5 +45,28 @@ class User {
     return $stmt->execute();
   }
 
+  public static function find($id, $db)
+  {
+    $stmt = $db->prepare("SELECT * FROM users WHERE id = :id");
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+    $user = $stmt->fetch(\PDO::FETCH_ASSOC);
 
+    if ($user) {
+      return new self(
+        $user['id'],
+        $user['username'],
+        $user['first_name'],
+        $user['last_name'],
+        $user['email'],
+        $user['password'],
+        $user['created_at'],
+        $user['updated_at'],
+        $user['bio'],
+        $user['role']
+      );
+    }
+
+    return null;
+  }
 }
