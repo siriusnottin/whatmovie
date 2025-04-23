@@ -1,6 +1,6 @@
 *.pdf
 db*
-app/raw/apache/*.conf
+app/raw/apache/vhost.conf
 uploads/
 
 # generated files
