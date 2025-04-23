@@ -10,14 +10,17 @@ Watchlist for your movies and TV Shows.
 - Apache
 
 **Frontend Tools**
--  Tailwind
--  Sass
+
+- Tailwind
+- Sass
 
 **Design**
+
 - Figma
 - [coolicons](https://coolicons.cool/)
 
 **Fonts**
+
 - [Rubik](https://hfs-studio.com/rubik/)
 - [Inter](https://rsms.me/inter/)
 
