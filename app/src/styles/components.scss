@@ -1,6 +1,23 @@
 @layer components {
 
-  main form {
+  a {
+    text-decoration: underline;
+    text-decoration-color: var(--color-grape);
+    text-underline-offset: 0.2rem;
+    text-decoration-thickness: 0.1rem;
+    color: var(--color-grape);
+    font-weight: var(--font-weight-semibold);
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration-color: var(--color-grape-light);
+      color: var(--color-grape-light);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -74,15 +91,13 @@ input[type="checkbox"] {
 
 .btn {
   cursor: pointer;
-}
-
-.btn-primary {
-  background-color: var(--color-grape);
   color: var(--color-celeste);
+  @apply font-['Inter'] font-medium leading-9;
+  text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 0.375rem;
   box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.09);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   width: fit-content;
 
@@ -111,6 +126,31 @@ input[type="checkbox"] {
     background-color: transparent;
     color: var(--color-columbia-blue);
     border: 1px solid var(--color-grape);
+  }
+}
+
+.btn-primary {
+  color: var(--color-celeste);
+  background-color: var(--color-grape);
+}
+
+.btn-link {
+  background-color: transparent;
+  color: var(--color-grape);
+
+  i {
+    @apply font-bold text-2xl;
+  }
+
+  &:hover {
+    background-color: transparent;
+    color: var(--color-grape-light);
+    transition: all 0.3s ease-in-out;
+
+    i {
+      margin-left: 0.4rem;
+      transition: all 0.3s ease-in-out;
+    }
   }
 }
 
