@@ -28,8 +28,14 @@ class Database
    * @param mixed $pdo
    * @throws \PDOException
    */
-  public function __construct($host = null, $dbname = null, $user = null, $password = null, $charset = null, \PDO $pdo = null)
-  {
+  public function __construct(
+    $host = null,
+    $dbname = null,
+    $user = null,
+    $password = null,
+    $charset = null,
+    ?\PDO $pdo = null // Allow passing a PDO object directly (for testing or other purposes)
+  ) {
     if ($pdo) {
       $this->pdo = $pdo; // Use the provided PDO object
     } else {
