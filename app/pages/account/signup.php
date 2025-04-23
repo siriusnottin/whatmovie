@@ -16,23 +16,26 @@ $page = new Page([
 // Start output buffering
 ob_start();
 ?>
-<div class="auth-content">
-    <h1 class="title"><?= $page->getTitle(); ?></h1>
-    <p class="description"><?= $page->getDescription(); ?></p>
-</div>
-<form action="/signup" method="POST" class="form">
-    <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" required>
+<main>
+    <div class="auth-content">
+        <h1 class="title">Join The <br>Community</h1>
+        <p class="description"><?= $page->getDescription(); ?></p>
     </div>
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
-    </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Sign Up</button>
-    </div>
-</form>
+    <form action="/signup" method="POST" class="form">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+            <a href="/signin">Already have an account?</a>
+        </div>
+    </form>
+</main>
 <?php
 $content = ob_get_clean();
 
