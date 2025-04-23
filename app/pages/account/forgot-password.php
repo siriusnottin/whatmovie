@@ -16,19 +16,22 @@ $page = new Page([
 // Start output buffering
 ob_start();
 ?>
-<div class="auth-content">
-    <h1 class="title"><?= $page->getTitle(); ?></h1>
-    <p class="description"><?= $page->getDescription(); ?></p>
-</div>
-<form action="/forgot-password" method="POST" class="form">
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+<main>
+    <div class="auth-content">
+        <h1 class="title">Reset<br>password</h1>
+        <p class="description"><?= $page->getDescription(); ?></p>
     </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Send Reset Link</button>
-    </div>
-</form>
+    <form action="/forgot-password" method="POST" class="form">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Send Reset Link</button>
+            <a href="/signin" class="btn btn-link">Back to Sign In<i class="ci-Caret_Right_SM"></i></a>
+        </div>
+    </form>
+</main>
 <?php
 $content = ob_get_clean();
 
