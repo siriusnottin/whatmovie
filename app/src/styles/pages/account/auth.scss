@@ -1,7 +1,25 @@
 main {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  @apply gap-10;
+}
+
+.auth-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.25rem;
+
+  h1 {
+    color: var(--color-grape);
+    font-size: var(--text-8xl);
+    @apply font-black leading-[70px];
+  }
+
+  .description {
+    @apply max-w-60 text-sm leading-tight;
+    text-align: right;
+  }
 }

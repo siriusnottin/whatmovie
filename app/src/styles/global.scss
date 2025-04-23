@@ -18,16 +18,20 @@ body {
 
 @import './header.scss';
 
-body[data-page="home"] {
+body[data-layout="home"] {
   @import './pages/home.scss';
 }
 
-body[data-page="discover"] {
+body[data-layout="discover"] {
   @import './pages/discover.scss';
 }
 
-body[data-page="auth"] {
+body[data-layout="auth"] {
   @import './pages/account/auth.scss';
+}
+
+body[data-layout="account"] {
+  @import './pages/account/account.scss';
 }
 
 @import './footer.scss';
