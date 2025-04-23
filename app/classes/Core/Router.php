@@ -18,8 +18,7 @@ class Router
         return call_user_func($route['handler']);
       }
     }
-
-    http_response_code(404);
-    echo "404 Not Found";
+    // Log unmatched routes
+    error_log("No route matched for URI: $requestUri and Method: $requestMethod");
   }
 }
