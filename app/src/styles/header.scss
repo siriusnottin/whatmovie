@@ -12,4 +12,83 @@ body>header {
   border-radius: 0.375rem;
   border: 1.5px solid var(--slate-100, #F1F5F9);
   box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.09);
+
+  a {
+    color: var(--color-grape-light);
+    text-decoration: none;
+    font-size: var(--text-base);
+    @apply font-medium leading-tight;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--color-grape-light);
+      text-decoration: underline;
+    }
+  }
+
+  i {
+    @apply font-medium text-lg;
+  }
+
+  .breandcrumbs {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-grape-light);
+
+    font-size: var(--text-base);
+    text-decoration: none;
+    @apply font-medium;
+
+    .separator {
+      color: var(--color-grape-light);
+      font-size: var(--text-sm);
+      @apply font-medium font-['Inter'];
+    }
+  }
+
+  .search-form {
+    display: inline-flex;
+    color: var(--color-columbia-blue);
+
+    .search-input {
+      color: var(--color-columbia-blue);
+      background-color: var(--color-grape-black);
+      outline: none;
+      @apply pr-2 pl-2;
+
+      //TODO:fix the focus-visible
+      &:focus-visible {
+        outline: 3px solid #6536B0;
+        outline-offset: 0.25rem;
+        box-shadow: 0 0 0 2px #9E7DD5;
+      }
+
+      &:focus:not(:focus-visible) {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+
+    .shortcut-txt {
+      @apply opacity-70 text-sm font-medium font-['Inter'] leading-tight;
+    }
+  }
+
+  .account-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-grape-light);
+
+    .account-link {
+      color: var(--color-grape-light);
+      font-size: var(--text-base);
+      text-decoration: none;
+      @apply font-medium;
+    }
+
+
+  }
 }
