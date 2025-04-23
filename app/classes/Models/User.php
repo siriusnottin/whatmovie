@@ -43,6 +43,26 @@ class User
   {
     return $this->first_name;
   }
+  public function getLastName()
+  {
+    return $this->last_name;
+  }
+  public function getEmail()
+  {
+    return $this->email;
+  }
+  public function getCreatedAt()
+  {
+    return $this->created_at;
+  }
+  public function getBio()
+  {
+    return $this->bio;
+  }
+  public function getRole()
+  {
+    return $this->role;
+  }
 
   private function createUser($username, $email, $password)
   {
