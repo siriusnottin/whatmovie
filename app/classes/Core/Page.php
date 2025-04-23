@@ -11,6 +11,7 @@ class Page
   private $layoutTemplate;
   private $styles;
   private $scripts;
+  private $db;
 
   // Default styles included on every page
   private $BASE_STYLES = [
@@ -28,6 +29,8 @@ class Page
   ];
   public function __construct(array $config = [])
   {
+    $this->db = $config['db'] ?? null;
+    $this->slug = $config['slug'] ?? '';
     $this->slug = $config['slug'] ?? '';
     $this->title = $config['title'] ?? '';
     $this->lang = $config['lang'] ?? 'en';
@@ -64,7 +67,15 @@ class Page
   {
     return $this->layoutTemplate;
   }
-
+  public function getUsername()
+  {
+    $userId = $_SESSION['user_id'] ?? null;
+    if ($userId) {
+      $user = \App\Models\User::find($userId, $this->db);
+      return $user ? $user->getUsername() : 'Guest';
+    }
+    return 'Guest';
+  }
   public function renderStyles()
   {
     $styles = '';
