@@ -34,4 +34,8 @@ body[data-layout="account"] {
   @import './pages/account/profile.scss';
 }
 
+body[data-layout="error"] {
+  @import './pages/error.scss';
+}
+
 @import './footer.scss';

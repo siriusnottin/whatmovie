@@ -22,7 +22,6 @@ COPY vendor/ /var/www/html/vendor/
 RUN composer install --no-dev --no-scripts --no-progress --prefer-dist
 
 # Apache configuration
-COPY raw/apache/errors /errors
 COPY raw/apache/vhost.conf /etc/apache2/sites-available/000-default.conf
 COPY raw/apache/apache-dev.conf /etc/apache2/conf-available/app.conf
 

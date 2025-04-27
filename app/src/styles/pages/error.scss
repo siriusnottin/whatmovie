@@ -1,0 +1,38 @@
+/* Error Page Styles */
+.error-content {
+  text-align: center;
+  margin: 50px auto;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+}
+
+.error-content .title {
+  font-size: 3rem;
+  color: #dc3545;
+  margin-bottom: 20px;
+}
+
+.error-content .description {
+  font-size: 1.25rem;
+  color: #6c757d;
+  margin-bottom: 30px;
+}
+
+.error-content .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.error-content .btn:hover {
+  background-color: #0056b3;
+}

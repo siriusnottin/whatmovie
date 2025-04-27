@@ -25,7 +25,8 @@ class Page
     'about',
     'discover',
     'auth',
-    'account'
+    'account',
+    'error',
   ];
   public function __construct(array $config = [])
   {
