@@ -16,7 +16,7 @@ Watchlist for your movies and TV Shows.
 
 **Design**
 
-- Figma
+- [Figma](https://www.figma.com/design/wHloRCebKfnaUKCqeaKjKR/WhatMovie?node-id=1-2&t=hTXiPStiKN2TlOZW-1)
 - [coolicons](https://coolicons.cool/)
 
 **Fonts**
@@ -26,7 +26,7 @@ Watchlist for your movies and TV Shows.
 
 ## Project Structure
 
-```
+```text
 /whatmovie
 │
 ├── /app
