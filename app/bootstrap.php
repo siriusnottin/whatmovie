@@ -2,14 +2,9 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-use Dotenv\Dotenv;
 use App\Core\Router;
 use App\Controllers\AuthController;
 use App\Controllers\AccountController;
-
-// Load environment variables
-$dotenv = Dotenv::createImmutable(__DIR__);
-$dotenv->load();
 
 $router = new Router();
 $authController = new AuthController();
