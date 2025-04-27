@@ -1,3 +1,3 @@
 <?php
 
-// needed for Apache. All the routing is done there.
+require_once __DIR__ . '/bootstrap.php';
